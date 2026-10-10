@@ -246,7 +246,8 @@ exports.postreset = (req, res, next) => {
         User.findOne({ email: req.body.myemail })
             .then(user => {
                 if (!user) {
-                    return res.redirect('/reset-password')
+
+                   throw new Error('No user with that email found')
                 }
                 user.resetToken = token;
                 user.resetTokenExpiration = Date.now() + 600000;
@@ -266,7 +267,11 @@ exports.postreset = (req, res, next) => {
             })
             .catch(err=>{
                 console.log(err);
-                const err=new Error(err);
+                if(err.message==='No user with that email found'){
+
+                    return res.redirect('/reset-password')
+                }
+                const error=new Error(err);
                 error.statusCode=403;
                 next(error)
             })
@@ -294,6 +299,7 @@ exports.getNewPass = (req, res, next) => {
         })
         .catch(err => {
             console.log(err)
+            next(err)
         })
 }
 
@@ -325,6 +331,7 @@ exports.postNewPass = (req, res, next) => {
         })
         .catch(err => {
             console.log(err);
+            next(err)
         })
 }
 
