@@ -1,0 +1,98 @@
+<%- include('../includes/head.ejs') %>
+
+    <link rel="stylesheet" href="/css/navigation.css">
+    <link rel="stylesheet" href="/css/user-view.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.3.1/css/all.min.css"
+        integrity="sha512-QeR2VH+lsBE5LSAe1Q5EnTBbe7XTBubt8dG93Y7gidSgdMCr8nVqKcfKAMyN96SV8KDbZVTDXChatu5G2KQGzg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer">
+    </head>
+
+    <body>
+        <%- include('../includes/navigation.ejs') %>
+
+            <main class="content">
+                <% if(prodss.length>0) { %>
+                    <h1>Home</h1>
+
+                    <div class="prods">
+
+                        <% for(let product of prodss) {%>
+
+                            <div class="prod">
+                                <div class="item">
+                                    <div class="img">
+                                        <img class="prod-img" src="/images/<%= product.imageURL %>"
+                                            alt="<%=product.title.charAt(0).toUpperCase()+product.title.substring(1)%>">
+                                    </div>
+                                    <div class="title">
+                                        <p id="title-name">
+                                            <%=product.title.charAt(0).toUpperCase()+product.title.substring(1)%>
+                                        </p>
+                                    </div>
+                                    <div class="price">
+                                        <div class="innerp">
+                                            <span>Price: </span>
+                                            <p>
+
+                                                ₹<%= product.formattedprice%>
+                                            </p>
+
+                                        </div>
+                                    </div>
+                                    <!-- <div class="desc">
+                                        <p class="description">
+                                            <%= product.description%>
+                                        </p>
+                                    </div> -->
+                                    <div class="action-btn">
+                                        <a href="/products/<%= product._id %>" class="detail-btn">Details</a>
+
+                                        <%if(isAuthenticatedUser && !isAuthenticatedAdmin) {%>
+                                            <%- include('../includes/add-to-cart.ejs',{product:product}) %>
+                                                <%}%>
+                                                    <!-- this object passed because inside loop the variable is not reached t0 the code inside the include (new file) so right product is the product in this code and left product is the product that will be used in add-to-cart.ejs code -->
+                                    </div>
+                                </div>
+
+                            </div>
+                            <%}%>
+
+                    </div>
+                    <section class="pagination">
+                        <%if(currentPage !==1 && previousPage !==1) { %>
+                            <a href="/?page=1">1</a>
+                            <%}%>
+                                <%if(hasPreviousPage) {%>
+
+                                    <a href="/?page=<%=previousPage%>">
+                                        <%=previousPage%>
+                                    </a>
+                                    <%}%>
+                                        <a href="/?page=<%=currentPage%>" class="active">
+                                            <%=currentPage%>
+                                        </a>
+                                        <%if(hasNextPage) {%>
+
+                                            <a href="/?page=<%=nextPage%>">
+                                                <%=nextPage%>
+                                            </a>
+                                            <%}%>
+
+                                                <%if(nextPage !==lastPage && currentPage !==lastPage) {%>
+
+                                                    <a href="/?page=<%=lastPage%>">
+                                                        <%=lastPage%>
+                                                    </a>
+                                                    <%}%>
+
+                    </section>
+
+                    <%} else {%>
+                        <h1>No Products</h1>
+                        <%}%>
+            </main>
+            <%- include('../includes/end.ejs') %>
+                <script src="/javascript/user.js"></script>
+                <script src="/socket.io/socket.io.js"></script>
+                <script src="/javascript/socket.js"></script>
+                <script src="/javascript/product.js"></script>

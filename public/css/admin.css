@@ -1,0 +1,97 @@
+*{
+            margin:0;
+            padding:0;
+            box-sizing: border-box;
+            font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+            
+        }
+        body{
+            /* height:100vh; */
+            /* width:100vw; */
+           /*  border:2px solid red; */
+        }
+        
+
+        main{
+            /* border:2px solid blue; */
+        }
+        .form{
+           /*  border:2px solid red; */
+          
+            padding:20px;
+            display:flex;
+            justify-content: center;
+          
+            /* display:inline-block */
+           /*  width:fit-content;
+ */
+        }
+        .inputAll{
+            /* border: 2px solid green; */
+            width:460px;
+            padding:20px 10px;
+            border-radius: 9px;
+            box-shadow:0 2px 12px rgba(0,0,0,0.14);
+           
+        }
+        .input{
+            margin-bottom:20px;
+        }
+        .input:nth-child(4){
+            margin-bottom:10px;
+        }
+        .input input,
+        .input textarea{
+            width:95%; 
+            /* height:25px; */
+            padding:10px;
+            margin:0px 5px;
+            
+            
+            
+        }
+
+        .input label{
+            display:block;
+            margin-bottom: 10px;
+          
+        }
+        .input input::placeholder,
+        .input textarea::placeholder{
+            font-weight: bold;
+        }
+        .btn{
+            margin:20px 0px 0px 0px;
+        }
+        .btn button{
+            width:110px;
+            height:30px;
+            border:none;
+            background:none;
+            background-color:rgb(168, 20, 20);
+            color:white;
+            font-size:2;
+            font-weight: bold;
+            border-radius: 8px;
+            cursor:pointer;
+            text-align:center;
+            
+        }
+        .btn button:hover{
+            background-color: rgb(171, 115, 115);
+        }
+        /* .active{
+            color:rgb(255, 255, 47);
+        } */
+
+        .error-msg {
+    margin-bottom: 10px;
+}
+
+#msg {
+    color: red;
+    font-family: "Jost";
+    font-size: 21px;
+    font-weight: bold;
+    text-align: center;
+}

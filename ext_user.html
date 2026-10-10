@@ -1,0 +1,352 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>shop</title>
+
+
+
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+
+        }
+
+        body {
+            height: 100vh;
+        }
+
+        .head {
+            /* border:2px solid red; */
+            height: 10%;
+            background-color: rgb(10, 73, 42);
+        }
+
+        .nav {
+            /* border:2px solid black; */
+            height: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        li {
+            list-style: none;
+            margin: 20px;
+
+        }
+
+        a {
+            text-decoration: none;
+            font-size: 20px;
+            color: white;
+        }
+
+        .content {
+
+            margin: 10px;
+        }
+
+        .content h1 {
+            font-size: 40px;
+            text-align: center;
+        }
+
+        .content p {
+            font-size: 25px;
+        }
+
+        .prods{
+            border:2px solid red;
+           
+            padding:10px;
+            display:grid;
+
+           /*  grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;  */
+            grid-template-columns: repeat(6,auto); 
+            grid-template-rows:1fr 1fr;
+            column-gap:10px;
+            row-gap: 30px;
+        }
+        .prod{
+            border:2px solid blue;
+            padding:10px 5px 10px 5px;
+           
+            display:flex;
+            justify-content:center;
+            align-items: center;
+        }
+        .item{
+            border:2px solid black;
+           /*  height:150px; */
+           text-align: center;
+           
+        }
+        .prod-img{
+            margin-top:7px;
+            height:70px;
+        }
+        .price p{
+            font-size:21px;
+            margin-top:7px;
+            margin-bottom:8px;
+        }
+        .innerp{
+            /* border:2px solid red; */
+            display:flex;
+            align-items: center;
+        }
+        .price span{
+            font-size: 11px;
+            text-align: center;
+            align-items: center;
+        }
+        .addtocart{
+            margin-bottom:10px
+        }
+        .cart-btn{
+            border:none;
+            background:none;
+            color:black;
+            background-color:rgb(255, 229, 31);
+            outline:1px solid rgb(255, 229, 31);
+            height:26px;
+            width:98%;
+            border-radius:7px;
+            font-size: 17px;
+            font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif ;
+            font-weight: bold;
+        }
+        #title-name{
+            font-size: 25px;
+           font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif ;
+            font-weight: bold;
+        }
+    </style>
+</head>
+
+<body>
+    <header class="head">
+        <nav class="nav">
+            <li class="home"><a href="/">Shop</a></li>
+            <li class="add"><a href="/admin/add-products">Add Product</a></li>
+        </nav>
+    </header>
+
+    <main class="content">
+        <h1>My Products</h1>
+        <p>List of all the products</p>
+
+        <div class="prods">
+            <div class="prod">
+                <div class="item">
+                    <div class="img">
+                        <img class="prod-img" src="./facebook-logo.png" alt="image">
+                    </div>
+                    <div class="title">
+                        <p id="title-name">Book</p>
+                    </div>
+                    <div class="price">
+                        <div class="innerp">
+                        <span>Price: </span>
+                            <p>
+
+                                $20.00
+                            </p>
+                                
+                        </div>
+                    </div>
+                    <div class="addtocart">
+                        <button class="cart-btn">Add To Cart</button>
+                    </div>
+                </div>
+
+                </div>
+
+               <div class="prod">
+                <div class="item">
+                    <div class="img">
+                        <img class="prod-img" src="./facebook-logo.png" alt="image">
+                    </div>
+                    <div class="title">
+                        <p id="title-name">Book</p>
+                    </div>
+                    <div class="price">
+                        <div class="innerp">
+                        <span>Price: </span>
+                            <p>
+
+                                $20.00
+                            </p>
+                                
+                        </div>
+                    </div>
+                    <div class="addtocart">
+                        <button class="cart-btn">Add To Cart</button>
+                    </div>
+                </div>
+
+                </div>
+
+                 <div class="prod">
+                <div class="item">
+                    <div class="img">
+                        <img class="prod-img" src="./facebook-logo.png" alt="image">
+                    </div>
+                    <div class="title">
+                        <p id="title-name">Book</p>
+                    </div>
+                    <div class="price">
+                        <div class="innerp">
+                        <span>Price: </span>
+                            <p>
+
+                                $20.00
+                            </p>
+                                
+                        </div>
+                    </div>
+                    <div class="addtocart">
+                        <button class="cart-btn">Add To Cart</button>
+                    </div>
+                </div>
+
+                </div>
+
+                 <div class="prod">
+                <div class="item">
+                    <div class="img">
+                        <img class="prod-img" src="./facebook-logo.png" alt="image">
+                    </div>
+                    <div class="title">
+                        <p id="title-name">Book</p>
+                    </div>
+                    <div class="price">
+                        <div class="innerp">
+                        <span>Price: </span>
+                            <p>
+
+                                $20.00
+                            </p>
+                                
+                        </div>
+                    </div>
+                    <div class="addtocart">
+                        <button class="cart-btn">Add To Cart</button>
+                    </div>
+                </div>
+
+                </div>
+
+                <div class="prod">
+                <div class="item">
+                    <div class="img">
+                        <img class="prod-img" src="./facebook-logo.png" alt="image">
+                    </div>
+                    <div class="title">
+                        <p id="title-name">Book</p>
+                    </div>
+                    <div class="price">
+                        <div class="innerp">
+                        <span>Price: </span>
+                            <p>
+
+                                $20.00
+                            </p>
+                                
+                        </div>
+                    </div>
+                    <div class="addtocart">
+                        <button class="cart-btn">Add To Cart</button>
+                    </div>
+                </div>
+
+                </div>
+
+                 <div class="prod">
+                <div class="item">
+                    <div class="img">
+                        <img class="prod-img" src="./facebook-logo.png" alt="image">
+                    </div>
+                    <div class="title">
+                        <p id="title-name">Book</p>
+                    </div>
+                    <div class="price">
+                        <div class="innerp">
+                        <span>Price: </span>
+                            <p>
+
+                                $20.00
+                            </p>
+                                
+                        </div>
+                    </div>
+                    <div class="addtocart">
+                        <button class="cart-btn">Add To Cart</button>
+                    </div>
+                </div>
+
+                </div>
+
+                 <div class="prod">
+                <div class="item">
+                    <div class="img">
+                        <img class="prod-img" src="./facebook-logo.png" alt="image">
+                    </div>
+                    <div class="title">
+                        <p id="title-name">Book</p>
+                    </div>
+                    <div class="price">
+                        <div class="innerp">
+                        <span>Price: </span>
+                            <p>
+
+                                $20.00
+                            </p>
+                                
+                        </div>
+                    </div>
+                    <div class="addtocart">
+                        <button class="cart-btn">Add To Cart</button>
+                    </div>
+                </div>
+
+                </div>
+
+                 <div class="prod">
+                <div class="item">
+                    <div class="img">
+                        <img class="prod-img" src="./facebook-logo.png" alt="image">
+                    </div>
+                    <div class="title">
+                        <p id="title-name">Book</p>
+                    </div>
+                    <div class="price">
+                        <div class="innerp">
+                        <span>Price: </span>
+                            <p>
+
+                                $20.00
+                            </p>
+                                
+                        </div>
+                    </div>
+                    <div class="addtocart">
+                        <button class="cart-btn">Add To Cart</button>
+                    </div>
+                </div>
+
+                </div>
+            
+
+        </div>
+    </main>
+</body>
+
+</html> 

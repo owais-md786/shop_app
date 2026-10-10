@@ -1,0 +1,58 @@
+<header class="head">
+    <nav class="nav">
+        <div class="route">
+            <%if(isAuthenticatedUser && !isAuthenticatedAdmin || !isAuthenticatedUser && !isAuthenticatedAdmin){%>
+                <li class="home <%= path==='/'?'active':'' %>"><a  href="/">
+                        <i class="fa-solid fa-house"></i>
+                        <span>Home</span></a></li>
+                <li class="home <%= path==='/products'?'active':'' %>" ><a class="" href="/products">
+                        <i class="fa-solid fa-shop"></i><span>Shop</span></a></li>
+                <%}%>
+
+                    <%if(isAuthenticatedUser && !isAuthenticatedAdmin) {%>
+
+                        <li class="home <%= path==='/cart'?'active':'' %>"><a  href="/cart">
+                                <i class="fa-solid fa-cart-shopping"></i>
+                                <span>Cart</span></a></li>
+                        <li class="home <%= path==='/orders'?'active':'' %>"><a  href="/orders">
+                                <i class="fa-solid fa-bag-shopping"></i><span>Orders</span></a></li>
+                        <%} else if (isAuthenticatedAdmin && !isAuthenticatedUser) {%>
+                            <li class="add <%= path==='/admin/add-products'?'active':'' %>"><a 
+                                    href="/admin/add-products"><span>Add Product</span></a></li>
+                            <li class="add <%= path==='/admin/products'?'active':'' %>"><a 
+                                    href="/admin/products"><span>Products</span></a></li>
+
+                            <%}%>
+
+        </div>
+
+
+        <div class="loginout">
+            <%if(!isAuthenticatedUser && !isAuthenticatedAdmin) {%>
+                <div class="login">
+                    <li class="home <%= path==='/login'?'active':'' %>">
+                        <a  href="/login"><span>Login</span></a>
+                    </li>
+                </div>
+                <div class="signup">
+                    <li class="home <%= path==='/signup'?'active':'' %>">
+                        <a  href="/signup"><span>Signup</span></a>
+                    </li>
+                </div>
+                <%} else {%>
+                    <div class="logout">
+                        <li class="home ">
+                            <form class="logout" action="/logout" method="POST">
+                                <input type="hidden" name="_csrf" value="<%= csrfToken %>">
+                                <button type="submit"><i class="fa-solid fa-right-from-bracket"
+                                        style="color: rgb(255, 255, 255);"></i><span>Logout</span></button>
+                            </form>
+                        </li>
+                    </div>
+                    <%}%>
+
+                </div>
+             
+
+    </nav>
+</header>

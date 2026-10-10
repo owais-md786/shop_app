@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>
+        <%= pageTitle %>
+    </title>
+</head>
+
+<body>
+    <main class="content">
+        <% if(allUser.length>0) { %>
+            <h1>Users List</h1>
+            <div class="user-content">
+                <ul class="users">
+                    <% for(let user of allUser) { %>
+                        <li class="user">
+                            <%= user.name %>
+                        </li>
+                        <% } %>
+                </ul>
+            </div>
+            <% } else { %>
+                <h1>No User Found</h1>
+                <% } %>
+    </main>
+</body>
+
+</html>

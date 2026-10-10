@@ -1,0 +1,37 @@
+<%- include('../includes/head.ejs') %>
+
+    <link rel="stylesheet" href="/css/navigation.css">
+    <link rel="stylesheet" href="/css/admin.css">
+</head>
+
+<body>
+   <%- include('../includes/navigation.ejs') %>
+
+    <main>
+        <form class="form" action="/admin/edit-product" method="POST" enctype="multipart/form-data" novalidate>
+            <div class="inputAll">
+            <div class="input">
+                <label for="title">Enter Item</label>
+                <input type="text" placeholder="Enter Item" name="title" id="title" value="<%= product.title %>" required>
+            </div>
+            <div class="input">
+                <label for="price">Enter Price</label>
+                <input type="number" placeholder="Enter Price" name="price" inputmode="numeric" id="price"  value="<%= product.price %>" step="0.01" required>
+            </div>
+            <div class="input">
+                <label for="image">Insert Image</label>
+                <input type="file" placeholder="Insert Image" name="image" id="image" value="<%= product.imageURL %>">
+            </div>
+            <div class="input">
+                <label for="description">Enter Description</label>
+                <textarea name="description" id="description" rows="5" placeholder="Enter Description"><%= product.description %></textarea>
+            </div>
+            <div class="btn">
+                 <input type="hidden" name="_csrf" value="<%= csrfToken %>">
+                <button type="submit">Update Product</button>
+                <input type="hidden" name="productId" value="<%= product._id %>">
+            </div>
+            </div>
+        </form>
+    </main>
+<%- include('../includes/end.ejs') %>

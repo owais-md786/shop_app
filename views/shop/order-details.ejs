@@ -1,0 +1,132 @@
+<%- include('../includes/head.ejs') %>
+
+
+    
+
+    
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300&display=swap" rel="stylesheet">
+     <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/css/navigation.css">
+<link rel="stylesheet" href="/css/order-details.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.3.1/css/all.min.css" integrity="sha512-QeR2VH+lsBE5LSAe1Q5EnTBbe7XTBubt8dG93Y7gidSgdMCr8nVqKcfKAMyN96SV8KDbZVTDXChatu5G2KQGzg==" crossorigin="anonymous" referrerpolicy="no-referrer">
+    
+</head>
+<body>
+  
+    <main class="content">
+    
+        <div class="container">
+            <div class="container2">
+                <div class="imgcontainer">
+                    <img src="/images/<%=product.product.imageURL%>" alt="">
+                </div>
+                <div class="detailcontainer">
+                    <p class="t"><%=product.product.title.charAt(0).toUpperCase()+product.product.title.substring(1)%></p>
+                    <p class="dt"><%=product.product.description%></p>
+                    <p class="quant">Quantity:<%=product.product.quantity%></p>
+                    <p class="orderid">Order ID: # <%=orderId%></p>
+
+                </div>
+            </div>
+
+            <div class="deliverydate">
+                <div class="date">
+                    <p id="dt"><%=product._doc.product.orderStatus === 'Order Placed' ? 'Order will be delivered on': product._doc.product.orderStatus === 'Delivered' ? 'Delivered on' : 'Order will be delivered on' %></p>
+                    <p id="date"><%=product.product.deliveryDate.toLocaleString('en-IN',{
+        month:'short',
+        day:'numeric',
+        year:'numeric',
+    }) %></p>
+                    
+
+                </div>
+                <div class="boy">
+                    <img src="/images/delivery boy.png" alt="">
+                </div>
+            </div>
+            <div class="user-det">
+                <div class="user">
+                    <img src="/images/user-boy.png" alt="">
+                    <div class="to">
+                        <p class="del">Delivery To</p>
+                        <p class="name"><%=user.name.charAt(0).toUpperCase()+user.name.substring(1)%></p>
+                    </div>
+                </div>
+
+                <div class="line"></div>
+
+                <div class="contact">
+                    <img src="/images/telephone.png" alt="">
+                    <div class="num">
+
+                        <p id="c">Contact Details</p>
+                        <p id="tel"><%=user.phoneNumber%></p>
+                    </div>
+                </div>
+                <div class="address">
+                    <img src="/images/location.png" alt="">
+                    <div class="ghar">
+
+                        <p id="d">Delivery Address</p>
+                        <p id="add"><%=user.address.flatApart%><%=", "%><%=user.address.street%><%=", "%><%=user.address.area%><%=", "%><%=user.address.city%><%=" "%><%=user.address.zipcode%><%=", "%><%=user.address.state%></p>
+                    </div>
+                </div>
+            </div>
+            <div class="itemprice">
+                <div class="all">
+
+                    <div class="price">
+                        <p id="i">Item Price</p>
+                        <p id="p">₹ <%=product.product.quantPrice%></p>
+    
+                    </div>
+                    <div class="invoice">
+                        <a href="/orders/<%=orderId%>">Download Invoice</a>
+                    </div>
+                </div>
+                <div class="saving">
+                    <div class="discimg">
+                            <img src="/images/discount-icon.png" alt="discount-icon" >
+                        </div>
+                    <p id="save">You're saving <span>₹0</span> on this item.</p>
+                </div>
+            </div>
+            <div class="paymt">
+                <div class="stat">
+                    <p id="st">Payment Status</p>
+                    <div class="type">
+                        <img src="/images/check.png" alt="">
+                        <p id="did">Cash on delivery</p>
+                    </div>
+                </div>
+            </div>
+            <div class="order-det">
+                <div class="order">
+                    <div class="package">
+                        <img src="/images/package.png" alt="">
+                    </div>
+                    <p id="ttxt">Order details</p>
+                </div>
+                <div class="notknown">
+
+                    <div class="on">
+                        <p class="oron">Ordered On</p>
+                        <p class="dat"><%=product.product.orderDate.toLocaleString('en-IN',{
+        month:'short',
+        day:'numeric',
+        year:'numeric',
+    }) %></p>
+                    </div>
+                    <div class="id">
+                        <p class="oron">Order ID</p>
+                        <p class="dat"># <%=orderId%></p>
+                    </div>
+                </div>
+            </div>
+            
+    </div>
+</main>
+</body>
+</html>

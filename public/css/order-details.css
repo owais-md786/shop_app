@@ -1,0 +1,332 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Lato", sans-serif;
+}
+
+.content {
+    display: flex;
+
+    justify-content: center;
+}
+
+.container {
+    /*  border:2px solid red; */
+    width: 40%;
+    background-color: #F5F6F8;
+    padding: 10px 14px;
+    margin: 40px 0px;
+}
+
+.imgcontainer img {
+    height: 210px;
+}
+
+.container2 {
+    /* border:2px solid green; */
+    display: flex;
+    flex-direction: column;
+
+    align-items: center;
+}
+
+.imgcontainer {
+    /*   border:2px solid orange; */
+    margin: 10px 0px;
+}
+
+.detailcontainer {
+    /*  border:2px solid black; */
+    text-align: center;
+    margin: 10px 0px;
+    line-height: 28px;
+}
+
+.deliverydate {
+    /* border:2px solid rgb(216, 143, 143); */
+    margin: 20px 0px;
+    display: flex;
+    justify-content: space-between;
+    padding: 12px;
+    background-color: #e2fcf1;
+    outline: 1px solid #cecece;
+    border-radius: 16px;
+    box-shadow: 0 2px 12px rgba(0, 0, 0, 0.11);
+}
+
+.boy img {
+    height: 86px;
+}
+
+#date {
+    font-family: "Lato", sans-serif;
+    font-weight: 900;
+    font-size: 25px;
+    color: #1f9629
+}
+
+.date {
+    line-height: 31px;
+
+}
+
+#dt,
+#time {
+    font-family: "Lato", sans-serif;
+}
+
+.user,
+.contact,
+.address {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.user img {
+    height: 50px;
+}
+
+.address img,
+.contact img {
+    height: 17px;
+}
+
+.line {
+    border-top: 1px solid #d0d0d0;
+    margin: 15px 0px 20px 0px;
+}
+
+.user-det
+
+/* ,.user,.contact,.address */
+    {
+    /*  border:2px solid olive; */
+    padding: 10px;
+    outline: 1px solid #cecece;
+    border-radius: 16px;
+    box-shadow: 0 2px 12px rgba(0, 0, 0, 0.11);
+}
+
+.del {
+    font-size: 17px;
+    font-weight: 600;
+}
+
+.name {
+    font-size: 14px;
+    color: #5a5a5a
+}
+
+.to {
+    line-height: 25px;
+}
+
+.contact {
+    margin-bottom: 32px;
+}
+
+#tel,
+#add {
+    font-size: 13px;
+}
+
+#c,
+#d {
+    font-size: 15px;
+    font-weight: 600;
+}
+
+.ghar,
+.num {
+    line-height: 18px;
+}
+
+.itemprice {
+    /* border:2px solid forestgreen; */
+    margin: 20px 0px;
+    /* padding:12px 0px; */
+    line-height: 29px;
+    outline: 1px solid #cecece;
+    border-radius: 16px;
+    box-shadow: 0 2px 12px rgba(0, 0, 0, 0.11);
+}
+
+.price,
+.saving {
+    /* border:2px solid tan; */
+
+}
+
+.price {
+    margin-bottom: 12px;
+    padding: 7px 0px 0px 12px;
+
+}
+
+.saving {
+    display: flex;
+    padding: 5px 10px;
+    height: 52px;
+    /*  outline:1px solid #e2fcf1; */
+}
+
+#save,
+#p {
+    font-weight: 900;
+}
+
+#p {
+    font-size: 20px;
+}
+
+#save span {
+
+    font-weight: 900;
+    color: #168c2d;
+}
+
+.discimg img {
+    width: 20px;
+    height: 20px;
+    color: #168c2d;
+    align-items: center;
+}
+
+.discimg {
+    height: 20px;
+}
+
+.saving {
+    text-align: center;
+
+
+    background-color: #e2fcf1;
+    display: flex;
+
+    align-items: center;
+    border-radius: 16px;
+    gap: 7px;
+}
+
+#i {
+    color: #5a5a5a
+}
+
+.type img {
+    height: 20px;
+}
+
+.paymt {
+    /* border:2px solid red; */
+    outline: 1px solid #cecece;
+    border-radius: 16px;
+    box-shadow: 0 2px 12px rgba(0, 0, 0, 0.11);
+
+}
+
+.stat {
+    display: flex;
+    flex-direction: column;
+    gap: 13px;
+    /*  border:2px solid brown; */
+    padding: 12px;
+}
+
+.type {
+    display: flex;
+    gap: 5px;
+}
+
+#st {
+    font-weight: 800;
+}
+
+#did {
+    color: #5a5a5a;
+    font-size: 15px;
+}
+
+.package img {
+    height: 20px;
+}
+
+.order-det {
+    margin: 20px 0px;
+    outline: 1px solid #cecece;
+    border-radius: 16px;
+    box-shadow: 0 2px 12px rgba(0, 0, 0, 0.11);
+}
+
+.order-det,
+.on,
+.id,
+.order {
+    /*  border:2px solid red; */
+    padding: 5px;
+    padding-left: 7px;
+
+}
+
+.order {
+    display: flex;
+    gap: 9px;
+}
+
+.notknown {
+    display: flex;
+    gap: 10px;
+}
+
+.on,
+.id {
+    line-height: 22px;
+}
+
+.oron {
+    color: #5a5a5a;
+    font-size: 13px;
+}
+
+.dat {
+    font-size: 14px;
+}
+
+#ttxt {
+    font-weight: 800;
+}
+
+.all {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.invoice {
+    padding-right: 10px
+}
+
+.invoice a {
+    color: rgb(11, 11, 202)
+}
+
+
+@media (max-width:883px) {
+
+    .container {
+        /*  border:2px solid red; */
+        width: 100%;
+        background-color: #F5F6F8;
+        padding: 10px 14px;
+        margin: 40px 0px;
+    }
+
+    .imgcontainer img {
+    height: 160px;
+}
+    .invoice a {
+        color: rgb(11, 11, 202);
+        font-size:14px;
+    }
+}

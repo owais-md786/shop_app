@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>shop</title>
+   <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300&display=swap" rel="stylesheet">
+<link type="image/png" sizes="32x32" rel="icon" href=".../icons8-discount-ios_filled-32.png">
+
+
+ <link rel="stylesheet" href="/css/navigation.css">
+    <link rel="stylesheet" href="/css/checkout.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.3.1/css/all.min.css" integrity="sha512-QeR2VH+lsBE5LSAe1Q5EnTBbe7XTBubt8dG93Y7gidSgdMCr8nVqKcfKAMyN96SV8KDbZVTDXChatu5G2KQGzg==" crossorigin="anonymous" referrerpolicy="no-referrer">
+</head>
+<body>
+    <header class="head">
+        <h1 class="head-name"><%= pageTitle%></h1>
+    </header>
+
+    <main class="section">
+        <div class="products">
+
+            <% for(let p of product) { %>
+            <div class="prod">
+                <div class="item">
+                    <div class="img-quant">
+                        <div class="img">
+                            <img class="prod-img" src="/images/<%= p._doc.imageURL%>" alt="<%=p._doc.title%>">
+                        </div>
+                        <div class="quant">
+                        <div class="innerq">
+                        <span>Quantity: </span>
+                            <p>
+
+                                <%=p.quantity%>
+                            </p>
+                                
+                        </div>
+                        </div>
+
+                    </div>
+                    <div class="title-price">
+                        <div class="not-much">
+
+                            <div class="title">
+                                <p id="title-name"><%=p._doc.title.charAt(0).toUpperCase()+p._doc.title.substring(1)%></p>
+                            </div>
+                            <div class="price">
+                                
+                                    <p>
+        
+                                        ₹<%= p.quantPrice%>
+                                    </p>
+                                        
+                                
+                            </div>
+                        </div>
+
+                        <div class="delivery">
+                            <div class="delimg">
+                                <img src="/images/express-delivery.png" alt="express-delivery">
+                            </div>
+                            <p id="del-time">Expected delivery within 7-10 working days</p>
+                        </div>
+                    </div>
+                    
+                </div>
+
+            </div>
+
+            <%}%>
+
+              
+        </div> 
+        <div class="prices">
+
+            <div class="user-details">
+
+                <div class="name-type">
+    
+                    <div class="deli-name">
+                        <p class="del">Deliver to: </p>
+                        <p id="delname"> <%= user.name.charAt(0).toUpperCase()+user.name.substring(1)%></p>
+                    </div>
+                    <div class="type">
+                        <p class="deli-type"><%=user.address.addType%></p>
+                    </div>
+                </div>
+                <div class="address-phn">
+
+                    <div class="address">
+                        <p id="add"><%=user.address.flatApart%><%=", "%><%=user.address.street%><%=", "%><%=user.address.area%><%=", "%><%=user.address.city%><%=" "%><%=user.address.zipcode%><%=", "%><%=user.address.state%></p>
+                    </div>
+                    <div class="number">
+                        <p class="num">📞︎ +91 <%= user.phoneNumber %> </p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="price-detail">
+                <div class="p-d">
+                    <p>Price Details</p>
+                </div>
+
+                <div class="now-main">
+                    <div class="mrp">
+                        <p class="text-mrp">Total MRP (incl. of all taxes)</p>
+                        <p class="mrp-price"> ₹<%= totalSum%></p>
+                    </div>
+                    <div class="disc-mrp">
+                        <p class="text-mrp">Discount on MRP</p>
+                        <p class="disc-price">-₹<%= discount %></p>
+                    </div>
+                    <div class="del-fee">
+                        <p class="text-mrp">Delivery Fee</p>
+                        <p class="mrp-price">₹99</p>
+                    </div>
+
+                    <div class="divider"></div>
+
+                    <div class="total">
+                        <p class="text-total">Total Amount</p>
+                        <p class="tot-price">₹<%= normalSum %></p>
+
+                    </div>
+
+                    <div class="saved">
+                        <div class="discimg">
+                            <img src="/images/discount-icon.png" alt="discount-icon" >
+                        </div>
+                        <p class="save">You're saving <span>₹<%= discount %></span> on this order</p>
+                    </div>
+                </div>
+                <div class="order-btn">
+                    <form action="/post-order" method="post">
+                         <input type="hidden" name="_csrf" value="<%= csrfToken %>">
+                        <button class="place-btn" type="submit">Continue</button>
+
+                    </form>
+                    
+                </div>
+            </div>
+        </div>
+    </main>
+</body>
+</html>

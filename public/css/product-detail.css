@@ -1,0 +1,96 @@
+*{
+    box-sizing: border-box;
+    margin:0;
+    padding:0;
+
+    font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+#detail{
+   /*  border:2px solid red; */
+    height: auto;
+    /* display:flex;
+    justify-content:center;
+    align-items: center; */
+}
+.product{
+    /* border:2px solid black; */
+    text-align: center;
+}
+.main{
+    /* border:2px solid pink; */
+    margin:20px;
+    margin-bottom:15px;
+    padding: 15px;
+}
+
+.title{
+    font-size:50px;
+}
+
+.line{
+    border-bottom: 2px solid black;
+    margin:0px 20px;
+}
+.img{
+   /*  border:2px solid green; */
+    margin:20px;
+    margin-bottom:30px;
+}
+.img img{
+    height:150px;
+}
+
+.rate{
+   /*  border:2px solid orangered; */
+   margin-top:30px;
+    margin:20px;
+    margin-bottom:10px;
+    padding:10px;
+}
+.rate h3{
+    font-size:30px;
+}
+
+.desc{
+   /*  border:2px solid purple; */
+   margin:20px;
+   margin-top:10px;
+   margin-bottom:5px;
+    padding:20px 90px;
+}
+.description{
+    font-size:17px;
+}
+.btn{
+    margin:5px;
+    padding:10px;
+}
+.cart-btn,.edit-btn,.delete-btn,.detail-btn{
+            border:none;
+            background:none;
+            color:black;
+            background-color:rgb(255, 229, 31);
+            outline:1px solid rgb(193, 174, 31);
+            min-height:26px;
+            height:auto;
+            /* width:100%; */
+            min-width:40px;
+            border-radius:6px;
+            font-size: 17px;
+            font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif ;
+            font-weight: bold;
+            cursor:pointer;
+        }
+
+        .cart-btn{
+            min-width: 102px;
+        }
+        .cart-btn:active,.edit-btn:active,.delete-btn:active,.detail-btn:active{
+           opacity:0.5;
+        }
+        button{
+            -webkit-tap-highlight-color: transparent;
+    -webkit-touch-callout: none;
+    outline: none;
+        }

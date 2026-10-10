@@ -1,0 +1,48 @@
+<%- include('../includes/head.ejs') %>
+
+    <link rel="stylesheet" href="/css/navigation.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Jost:ital,wght@0,100..900;1,100..900&family=Signika:wght@300..700&family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap');
+    </style>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+    <link rel="stylesheet" href="/css/login.css">
+    </head>
+
+    <body>
+        <%- include('../includes/navigation.ejs') %>
+            <main class="main">
+
+                <div class="signin">
+                    <h1>Verify Email</h1>
+                    <p>verification code sent on email</p>
+                    <form class="login-form" action="/verify-email" method="POST">
+
+                        <div class="otp-input">
+                            <input type="tel" name="myotp" id="otp" minlength="6" maxlength="6"
+                                placeholder="OTP">
+
+                          
+                        </div>
+                        
+
+                        <input type="hidden" name="_csrf" value="<%= csrfToken %>">
+                        <button type="submit" id="submit">Verify</button>
+
+
+
+                    </form>
+
+                </div>
+                <% if(errorMessage) { %>
+                    <div class="error-msg">
+                        <p id="msg">
+                            <%= errorMessage %>
+                        </p>
+                    </div>
+                    <% } %>
+            </main>
+
+    </body>
+
+    </html>

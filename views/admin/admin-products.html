@@ -1,0 +1,409 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>shop</title>
+
+<!-- <link rel="stylesheet" href="/css/user-view.css">  -->
+
+<style>
+
+    * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+
+        }
+
+        body {
+            height: 100vh;
+        }
+
+        .head {
+            /* border:2px solid red; */
+            height: 10%;
+            background-color: rgb(10, 73, 42);
+        }
+
+        .nav {
+            /* border:2px solid black; */
+            height: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        li {
+            list-style: none;
+            margin: 20px;
+
+        }
+
+        a {
+            text-decoration: none;
+            font-size: 20px;
+            color: white;
+        }
+
+        .active{
+            color:rgb(255, 255, 47);
+        }
+
+        
+
+        .content {
+
+            margin: 10px;
+        }
+
+        .content h1 {
+            font-size: 40px;
+            text-align: center;
+        }
+
+        .content p {
+            font-size: 25px;
+        }
+
+        .prods{
+            border:2px solid red;
+           
+            padding:10px;
+            display:grid;
+
+           /*  grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;  */
+            grid-template-columns: repeat(5,auto); 
+            grid-template-rows:1fr 1fr;
+            column-gap:10px;
+            row-gap: 30px;
+        }
+        .prod{
+            border:2px solid blue;
+            padding:10px 5px 10px 5px;
+           
+            display:flex;
+            justify-content:center;
+            align-items: center;
+        }
+        .item{
+            border:2px solid black;
+            padding:5px;
+           /*  height:150px; */
+           height:auto;
+           text-align: center;
+           
+        }
+        .prod-img{
+            margin-top:7px;
+            height:70px;
+        }
+        .innerp{
+            display:flex;
+            justify-content: center;
+            
+        }
+        .price p{
+            font-size:21px;
+            /* margin-top:7px;
+            margin-bottom:8px; */
+        }
+        .innerp{
+            /* border:2px solid red; */
+            display:flex;
+            align-items: center;
+        }
+        .price span{
+            font-size: 11px;
+            text-align: center;
+            align-items: center;
+        }
+        .desc p{
+            font-size: 14px;
+        }
+        .action-btn{
+            margin-bottom:10px
+        }
+        .edit-btn,.delete-btn{
+            border:none;
+            background:none;
+            color:black;
+            background-color:rgb(248, 255, 46);
+            outline:1px solid rgb(149, 172, 0);
+            min-height:26px;
+            height:auto;
+            /* width:98%; */
+            min-width:20%;
+            border-radius:7px;
+            font-size: 17px;
+            font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif ;
+            font-weight: bold;
+            cursor:pointer;
+        }
+        #title-name{
+            font-size: 25px;
+           font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif ;
+            font-weight: bold;
+        }
+
+        .item div{
+            margin-bottom: 15px;
+        }
+      
+        
+</style>
+</head>
+
+<body>
+    <header class="head">
+        <nav class="nav">
+            <li class="home"><a href="/">Shop</a></li>
+            <li class="add"><a href="/admin/add-products">Add Product</a></li>
+        </nav>
+    </header>
+
+    <main class="content">
+        <h1>My Products</h1>
+        <p>List of all the products</p>
+
+        <div class="prods">
+            <div class="prod">
+                <div class="item">
+                    <div class="img">
+                        <img class="prod-img" src="./facebook-logo.png" alt="image">
+                    </div>
+                    <div class="title">
+                        <p id="title-name">Book</p>
+                    </div>
+                    <div class="price">
+                        <div class="innerp">
+                        <span>Price: </span>
+                            <p>
+
+                                $20.00
+                            </p>
+                                
+                        </div>
+                    </div>
+                    <div class="desc">
+                        <p class="description">Lorem ipsum dolor sit amet consectetur adipisicing elit. Nam eos illo suscipit ipsum molestias odio delectus incidunt numquam quam quidem, sunt culpa blanditiis atque temporibus cupiditate recusandae, labore reiciendis rem?</p>
+                    </div>
+                    <div class="action-btn">
+                        <button class="edit-btn">Edit</button>
+                        <button class="delete-btn">Delete</button>
+                    </div>
+                </div>
+
+                </div>
+
+               <div class="prod">
+                <div class="item">
+                    <div class="img">
+                        <img class="prod-img" src="./facebook-logo.png" alt="image">
+                    </div>
+                    <div class="title">
+                        <p id="title-name">Book</p>
+                    </div>
+                    <div class="price">
+                        <div class="innerp">
+                        <span>Price: </span>
+                            <p>
+
+                                $20.00
+                            </p>
+                                
+                        </div>
+                    </div>
+                    <div class="desc">
+                        <p class="description">Lorem ipsum dolor sit amet consectetur adipisicing elit. Nam eos illo suscipit ipsum molestias odio delectus incidunt numquam quam quidem, sunt culpa blanditiis atque temporibus cupiditate recusandae, labore reiciendis rem?</p>
+                    </div>
+                    <div class="action-btn">
+                        <button class="edit-btn">Edit</button>
+                        <button class="delete-btn">Delete</button>
+                    </div>
+                </div>
+
+                </div>
+
+                 <div class="prod">
+                <div class="item">
+                    <div class="img">
+                        <img class="prod-img" src="./facebook-logo.png" alt="image">
+                    </div>
+                    <div class="title">
+                        <p id="title-name">Book</p>
+                    </div>
+                    <div class="price">
+                        <div class="innerp">
+                        <span>Price: </span>
+                            <p>
+
+                                $20.00
+                            </p>
+                                
+                        </div>
+                    </div>
+                    <div class="desc">
+                        <p class="description">Lorem ipsum dolor sit amet consectetur adipisicing elit. Nam eos illo suscipit ipsum molestias odio delectus incidunt numquam quam quidem, sunt culpa blanditiis atque temporibus cupiditate recusandae, labore reiciendis rem?</p>
+                    </div>
+                    <div class="action-btn">
+                        <button class="edit-btn">Edit</button>
+                        <button class="delete-btn">Delete</button>
+                    </div>
+                </div>
+
+                </div>
+
+                 <div class="prod">
+                <div class="item">
+                    <div class="img">
+                        <img class="prod-img" src="./facebook-logo.png" alt="image">
+                    </div>
+                    <div class="title">
+                        <p id="title-name">Book</p>
+                    </div>
+                    <div class="price">
+                        <div class="innerp">
+                        <span>Price: </span>
+                            <p>
+
+                                $20.00
+                            </p>
+                                
+                        </div>
+                    </div>
+                    <div class="desc">
+                        <p class="description">Lorem ipsum dolor sit amet consectetur adipisicing elit. Nam eos illo suscipit ipsum molestias odio delectus incidunt numquam quam quidem, sunt culpa blanditiis atque temporibus cupiditate recusandae, labore reiciendis rem?</p>
+                    </div>
+                    <div class="action-btn">
+                        <button class="edit-btn">Edit</button>
+                        <button class="delete-btn">Delete</button>
+                    </div>
+                </div>
+
+                </div>
+
+                <div class="prod">
+                <div class="item">
+                    <div class="img">
+                        <img class="prod-img" src="./facebook-logo.png" alt="image">
+                    </div>
+                    <div class="title">
+                        <p id="title-name">Book</p>
+                    </div>
+                    <div class="price">
+                        <div class="innerp">
+                        <span>Price: </span>
+                            <p>
+
+                                $20.00
+                            </p>
+                                
+                        </div>
+                    </div>
+                    <div class="desc">
+                        <p class="description">Lorem ipsum dolor sit amet consectetur adipisicing elit. Nam eos illo suscipit ipsum molestias odio delectus incidunt numquam quam quidem, sunt culpa blanditiis atque temporibus cupiditate recusandae, labore reiciendis rem?</p>
+                    </div>
+                    <div class="action-btn">
+                        <button class="edit-btn">Edit</button>
+                        <button class="delete-btn">Delete</button>
+                    </div>
+                </div>
+
+                </div>
+
+                 <div class="prod">
+                <div class="item">
+                    <div class="img">
+                        <img class="prod-img" src="./facebook-logo.png" alt="image">
+                    </div>
+                    <div class="title">
+                        <p id="title-name">Book</p>
+                    </div>
+                    <div class="price">
+                        <div class="innerp">
+                        <span>Price: </span>
+                            <p>
+
+                                $20.00
+                            </p>
+                                
+                        </div>
+                    </div>
+                    <div class="desc">
+                        <p class="description">Lorem ipsum dolor sit amet consectetur adipisicing elit. Nam eos illo suscipit ipsum molestias odio delectus incidunt numquam quam quidem, sunt culpa blanditiis atque temporibus cupiditate recusandae, labore reiciendis rem?</p>
+                    </div>
+                    <div class="action-btn">
+                        <button class="edit-btn">Edit</button>
+                        <button class="delete-btn">Delete</button>
+                    </div>
+                </div>
+
+                </div>
+
+                 <div class="prod">
+                <div class="item">
+                    <div class="img">
+                        <img class="prod-img" src="./facebook-logo.png" alt="image">
+                    </div>
+                    <div class="title">
+                        <p id="title-name">Book</p>
+                    </div>
+                    <div class="price">
+                        <div class="innerp">
+                        <span>Price: </span>
+                            <p>
+
+                                $20.00
+                            </p>
+                                
+                        </div>
+                    </div>
+                    <div class="desc">
+                        <p class="description">Lorem ipsum dolor sit amet consectetur adipisicing elit. Nam eos illo suscipit ipsum molestias odio delectus incidunt numquam quam quidem, sunt culpa blanditiis atque temporibus cupiditate recusandae, labore reiciendis rem?</p>
+                    </div>
+                    <div class="action-btn">
+                        <button class="edit-btn">Edit</button>
+                        <button class="delete-btn">Delete</button>
+                    </div>
+                </div>
+
+                </div>
+
+                 <div class="prod">
+                <div class="item">
+                    <div class="img">
+                        <img class="prod-img" src="./facebook-logo.png" alt="image">
+                    </div>
+                    <div class="title">
+                        <p id="title-name">Book</p>
+                    </div>
+                    <div class="price">
+                        <div class="innerp">
+                        <span>Price: </span>
+                            <p>
+
+                                $20.00
+                            </p>
+                                
+                        </div>
+                    </div>
+                    <div class="desc">
+                        <p class="description">Lorem ipsum dolor sit amet consectetur adipisicing elit. Nam eos illo suscipit ipsum molestias odio delectus incidunt numquam quam quidem, sunt culpa blanditiis atque temporibus cupiditate recusandae, labore reiciendis rem?</p>
+                    </div>
+                    <div class="action-btn">
+                        <button class="edit-btn">Edit</button>
+                        <button class="delete-btn">Delete</button>
+                    </div>
+                </div>
+
+                </div>
+            
+
+        </div>
+    </main>
+</body>
+
+</html> 

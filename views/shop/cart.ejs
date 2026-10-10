@@ -1,0 +1,98 @@
+<%- include('../includes/head.ejs') %>
+
+    <link rel="stylesheet" href="/css/navigation.css">
+    <link rel="stylesheet" href="/css/cart.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.3.1/css/all.min.css"
+        integrity="sha512-QeR2VH+lsBE5LSAe1Q5EnTBbe7XTBubt8dG93Y7gidSgdMCr8nVqKcfKAMyN96SV8KDbZVTDXChatu5G2KQGzg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer">
+    </head>
+
+    <body>
+        <%- include('../includes/navigation.ejs') %>
+
+            <% if(product.length>0) { %>
+                <main class="content">
+
+                    <h1>Your Cart</h1>
+
+                    <div class="prods">
+
+                        <% for(let prod of product) { %>
+                            <div class="prod">
+                                <div class="item">
+
+                                    <!--  <form action="/delete-cart" method="POST" class="cross"> -->
+                                    <input type="hidden" name="_csrf" value="<%= csrfToken %>">
+                                    <button type="button" class="cross-btn cross">x</button>
+                                    <input type="hidden" name="productId" value="<%= prod._doc._id %>">
+                                    <!-- </form> -->
+                                    <div class="img">
+                                        <img class="prod-img" src="/images/<%= prod._doc.imageURL %>"
+                                            alt="<%= prod._doc.title.charAt(0).toUpperCase()+prod._doc.title.substring(1) %>">
+                                    </div>
+                                    <div class="title">
+                                        <p id="title-name">
+                                            <%= prod._doc.title.charAt(0).toUpperCase()+prod._doc.title.substring(1) %>
+                                        </p>
+                                    </div>
+                                    <div class="price">
+                                        <div class="innerp">
+                                            <span>Price: </span>
+                                            <p>
+
+                                                ₹<%= prod.quantPrice%>
+                                            </p>
+
+                                        </div>
+                                    </div>
+                                    <div class="buttons">
+
+
+
+                                        <!-- <form action="/minus-cart" method="POST" class="submore"> -->
+                                        <input type="hidden" name="_csrf" value="<%= csrfToken %>">
+                                        <button type="button" class="minus-btn">-</button>
+                                        <input type="hidden" name="productId" value="<%=prod._doc._id %>">
+                                        <!-- </form> -->
+                                        <div class="quantity">
+                                            Qty:<%= prod.quantity %>
+                                        </div>
+                                        <!--  <form action="/add-cart" method="POST" class="addmore"> -->
+                                        <input type="hidden" name="_csrf" value="<%= csrfToken %>">
+                                        <button type="button" class="add-btn">+</button>
+                                        <input type="hidden" name="productId" value="<%= prod._doc._id %>">
+                                        <!-- </form> -->
+
+                                    </div>
+                                </div>
+
+                            </div>
+                            <%}%>
+                    </div>
+                    <div class="deleteIT">
+                        <!-- 
+                        <form action="/delete-all-cart" method="POST" class="deleteAll"> -->
+                        <input type="hidden" name="_csrf" value="<%= csrfToken %>">
+                        <button class="deleteAll-btn" type="button">Delete All</button>
+                        <!-- </form> -->
+                    </div>
+                </main>
+                <footer class="foot">
+                    <div class="total">
+                        <h4 class="price">Total Price : ₹<%= totalSum%>
+                        </h4>
+                    </div>
+                    <form action="/buy-cart" method="POST" class="button2">
+                        <input type="hidden" name="_csrf" value="<%= csrfToken %>">
+                        <button type="submit" class="buy-btn">Place Order</button>
+                    </form>
+                </footer>
+                <%} else { %>
+                    <h1 id="empty">Cart Empty</h1>
+                    <%}%>
+
+                        <%- include('../includes/end.ejs') %>
+                            <script src="/javascript/user.js"></script>
+                            <script src="/socket.io/socket.io.js"></script>
+                            <script src="/javascript/socket.js"></script>
+                            <script src="/javascript/cart.js"></script>

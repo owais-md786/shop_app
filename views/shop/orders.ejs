@@ -1,0 +1,69 @@
+<%- include('../includes/head.ejs') %>
+
+<link rel="stylesheet" href="../../public/css/navigation.css">
+     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300&display=swap" rel="stylesheet">
+     <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/css/orders.css">
+    <link rel="stylesheet" href="/css/navigation.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.3.1/css/all.min.css" integrity="sha512-QeR2VH+lsBE5LSAe1Q5EnTBbe7XTBubt8dG93Y7gidSgdMCr8nVqKcfKAMyN96SV8KDbZVTDXChatu5G2KQGzg==" crossorigin="anonymous" referrerpolicy="no-referrer">
+</head>
+
+<body>
+   <%- include('../includes/navigation.ejs') %>
+
+<main class="content">
+    <div class="maintt">
+        <%if(products.length>0) { %>
+        <h1 class="maintitle">All orders</h1>
+        <div class="container">
+            <%for(let prod of products) {%>
+            <div class="container2">
+            <div class="status-tot">
+                <img src="<%=prod._doc.product.orderStatus === 'Order Placed' ? '/images/package.png': prod._doc.product.orderStatus === 'Delivered' ? '/images/booking (1).png' : '/images/fast-shipping.png' %>" alt="">
+                <div class="status">
+                    <p id="st"><%= prod._doc.product.orderStatus %></p>
+                    <p id="date">On <%=prod._doc.product.orderDate.toLocaleString('en-IN',{
+        month:'short',
+        day:'numeric',
+        year:'numeric',
+        hour:'numeric',
+        minute:'numeric',
+    }) %></p>
+                </div>
+            </div>
+            <div class="container3">
+                <div class="product">
+                    <div class="dett">
+                        
+                        <img src="/images/<%= prod._doc.product.imageURL %>" alt="fb">
+                        <div class="prod">
+                            <p id="title"><%= prod._doc.product.title.charAt(0).toUpperCase()+prod._doc.product.title.substring(1) %></p>
+                            <p id="info"><%= prod._doc.product.description %></p>
+                            <p class="quant">Qty:<%= prod._doc.product.quantity %></p>
+                        </div>
+                        </div>
+                        
+                        
+                        <div class="details">
+                            
+                            <a class="details-btn" href="/order-detail/<%= prod.orderId%>/<%=prod._doc.product._id%>">Details</a>
+                            
+                        </div>
+                        
+                    </div>
+                    
+                </div>
+                
+            </div>
+            <%}%>
+            
+    </div>
+    <%} else {%>
+        <h1 class="maintitle">No orders</h1>
+        <%}%>
+</div>
+</main>
+
+   <%- include('../includes/end.ejs') %>

@@ -1,0 +1,21 @@
+doctype html
+html(lang="en")
+    head
+        meta(charset="UTF-8")
+        meta(name="viewport", content="width=device-width, initial-scale=1.0")
+        title #{pageTitle}
+        link(rel="stylesheet", href="/css/admin.css")
+    body 
+        header.head
+            nav.nav 
+                li.home
+                    a(href="/") Shop 
+                li.add 
+                    a(href="/admin/add-products",class=(path==='/admin/add-products'?'active':'')) Add Product
+        main 
+            form.form(action="/admin/products",method="POST")
+                .input 
+                    input(type="text",placeholder="Enter Item",name="title",id="title")
+                    input(type="tel",placeholder="Enter Price",name="price" )
+                .btn
+                    button(type="submit") Add Product  

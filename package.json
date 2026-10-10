@@ -1,0 +1,50 @@
+{
+  "name": "my-nodejs-practice",
+  "version": "1.0.0",
+  "description": "",
+  "license": "ISC",
+  "author": "",
+  "type": "commonjs",
+  "main": "xyz.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node newExpress.js",
+    "start:dev": "nodemon newExpress.js"
+  },
+  "devDependencies": {
+    "nodemon": "^3.1.14"
+  },
+  "dependencies": {
+    "bcryptjs": "^3.0.3",
+    "body-parser": "^2.2.2",
+    "compression": "^1.8.2",
+    "connect-flash": "^0.1.1",
+    "connect-mongodb-session": "^5.0.0",
+    "csurf": "^1.11.0",
+    "dotenv": "^18.0.7",
+    "ejs": "^6.0.1",
+    "express": "^5.2.1",
+    "express-handlebars": "^8.0.1",
+    "express-session": "^1.19.0",
+    "express-validator": "^7.3.2",
+    "helmet": "^8.3.0",
+    "jsonwebtoken": "^9.0.3",
+    "mongodb": "^6.21.0",
+    "mongoose": "^8.24.4",
+    "morgan": "^1.12.1",
+    "msnodesqlv8": "^5.2.0",
+    "mssql": "^12.5.2",
+    "multer": "^2.4.0",
+    "mysql2": "^3.22.3",
+    "nodemailer": "^9.0.6",
+    "nodemailer-sendgrid-transport": "^0.2.0",
+    "pdfkit": "^0.20.2",
+    "pug": "^3.0.4",
+    "sequelize": "^6.37.8",
+    "socket.io": "^4.8.4"
+  },
+  "allowScripts": {
+    "msnodesqlv8@5.2.3": true,
+    "core-js@2.6.12": true
+  }
+}

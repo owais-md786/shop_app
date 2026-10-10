@@ -1,0 +1,45 @@
+<%- include('../includes/head.ejs') %>
+
+    <link rel="stylesheet" href="/css/navigation.css">
+    <link rel="stylesheet" href="/css/admin.css">
+</head>
+
+<body>
+   <%- include('../includes/navigation.ejs') %>
+
+    <main>
+         
+        <form class="form" action="/admin/add-products" method="POST" enctype="multipart/form-data">
+            <div class="inputAll">
+            <div class="input">
+                <label for="title">Enter Item</label>
+                <input type="text" placeholder="Enter Item" name="title" id="title" value="<%=oldInput.title%>" required>
+            </div>
+            <div class="input">
+                <label for="price">Enter Price</label>
+                <input type="number" placeholder="Enter Price" name="price" inputmode="numeric" id="price" step="0.01" value="<%=oldInput.price%>" required>
+            </div>
+            <div class="input">
+                <label for="image">Insert Image</label>
+                <input type="file" placeholder="Insert Image" name="image" id="image" required>
+            </div>
+            <div class="input">
+                <label for="description">Enter Description</label>
+                <textarea name="description" id="description" rows="5" placeholder="Enter Description" ><%=oldInput.description%></textarea>
+            </div>
+            <div class="btn">
+                <input type="hidden" name="_csrf" value="<%= csrfToken %>">
+                <button type="submit">Add Product</button>
+
+            </div>
+            </div>
+        </form>
+        <% if(errorMessage) { %>
+                    <div class="error-msg">
+                        <p id="msg">
+                            <%= errorMessage %>
+                        </p>
+                    </div>
+                <% } %>
+    </main>
+<%- include('../includes/end.ejs') %>

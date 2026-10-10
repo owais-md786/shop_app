@@ -1,0 +1,89 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.main {
+
+    display: flex;
+    flex-direction: column;
+    margin: 20px;
+    justify-content: center;
+    align-items: center;
+    padding: 20px 0px 10px 0px;
+}
+
+.conf img,
+.text,
+.goto {}
+
+.date,
+.orderid {
+    margin: 5px;
+}
+
+#dt,
+.orderid p {
+    font-family: "Montserrat", sans-serif;
+    font-weight: bolder;
+    font-size: 16px;
+}
+
+.conf img {
+    width: 200px;
+    height: 200px;
+}
+
+.text {
+    margin: 10px;
+}
+
+#txt {
+    font-family: "Montserrat", sans-serif;
+    font-weight: bolder;
+    font-size: 40px;
+
+    color: #168c2d;
+}
+
+.goto {
+    margin: 10px;
+}
+
+.goto a {
+    border: none;
+    background: none;
+    color: black;
+    background-color: rgb(255, 229, 31);
+    /* outline:1px solid rgb(193, 174, 31); */
+    min-height: 26px;
+    height: auto;
+    width: 100%;
+    /* min-width:40px; */
+    border-radius: 6px;
+    font-size: 17px;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    font-weight: bold;
+    cursor: pointer;
+    padding: 10px;
+    text-decoration: none;
+
+}
+
+
+@media (max-width:883px) {
+    .conf img {
+        width: 150px;
+        height: 150px;
+    }
+
+    #txt {
+        font-family: "Montserrat", sans-serif;
+        font-weight: bolder;
+        font-size: 35px;
+        text-align: center;
+
+        color: #168c2d;
+    }
+}

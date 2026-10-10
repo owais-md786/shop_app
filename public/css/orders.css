@@ -1,0 +1,139 @@
+* {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+           font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+           
+
+        }
+
+        body {
+            height: 100vh;
+        }
+        
+
+        
+        .content{
+            display:flex;
+            
+            justify-content:center;
+            
+           /*  border:2px solid black; */
+        }
+        .container{
+           /*  border:2px solid red; */
+            width:40%;
+            background-color: #F5F6F8;
+            padding:0px 14px;
+        }
+        .status-tot img{
+            width:30px;
+            height:30px;
+        }
+        .status-tot{
+            display:flex;
+            align-items:center;
+            gap:10px;
+            /* border:2px solid purple; */
+            margin-bottom:5px;
+            padding:5px;
+        }
+        .product img{
+            /* width:143px; */
+            height:80px;
+        }
+        .container3{
+            outline:1px solid rgb(166 165 165);
+            border-radius:18px;
+        }
+        .product{
+            display:flex;
+            align-items:center;
+            /* border:2px solid pink; */
+            width:100%;
+            gap:10%;
+            
+            
+            
+        }
+        .container2{
+            /* border:2px solid green; */
+            margin:20px 0px;
+            padding:8px 20px 10px 20px;
+            background-color: #ffffff;
+            border-radius: 6px;
+            box-shadow:0 2px 12px rgba(0,0,0,0.09);
+            
+        }
+        .dett{
+            display:flex;
+            /* border:2px solid blue; */
+            align-items: center;
+            padding:6px;
+            gap:18px;
+            width:80%;
+        }
+        .details{
+            flex:1;
+          padding-right:10px;
+
+        }
+        #title,#st{
+            font-weight: 900;
+            font-family: "Lato", sans-serif;
+        }
+        #st{
+            color:#168c2d;
+        }
+        #date,#info,.quant{
+            font-size: 13px;
+        }
+        .details-btn{
+            font-weight: 900;
+            border:none;
+            background:none;
+            color:black;
+            background-color:rgb(255, 229, 31);
+            /* outline:1px solid rgb(193, 174, 31); */
+            min-height:26px;
+            height:auto;
+            width:100%;
+            /* min-width:40px; */
+            border-radius:6px;
+            font-size: 15px;
+            font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif ;
+            
+            cursor:pointer;
+            padding:10px;
+        }
+        .prod{
+            line-height: 21px;
+        }
+        .maintt{
+            display:flex;
+            flex-direction: column;
+            width:100%;
+            align-items: center;
+            margin-top:10px;
+        }
+        .maintitle{
+            text-align: left;
+            font-weight: 900;
+        }
+
+
+        @media (max-width:883px){
+
+            .container{
+           /*  border:2px solid red; */
+            width:100%;
+            background-color: #F5F6F8;
+            padding:0px 14px;
+        }
+        .container2:last-child{
+            margin-bottom:87px;
+        }
+
+        }
+
+        

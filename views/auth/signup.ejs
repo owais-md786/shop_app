@@ -1,0 +1,98 @@
+<%- include('../includes/head.ejs') %>
+
+    <link rel="stylesheet" href="/css/navigation.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Jost:ital,wght@0,100..900;1,100..900&family=Signika:wght@300..700&family=Ubuntu:ital,wght@0,300;0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap');
+    </style>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+    <link rel="stylesheet" href="/css/login.css">
+    </head>
+
+    <body>
+        <%- include('../includes/navigation.ejs') %>
+            <main class="main">
+                <% if(errorMessage) { %>
+                    <div class="error-msg">
+                        <p id="msg">
+                            <%= errorMessage %>
+                        </p>
+                    </div>
+                <% } %>
+
+                        <div class="signin">
+                            <h1>Sign Up</h1>
+                            <form class="login-form" action="/signup" method="POST" novalidate>
+
+                                <div class="email-input">
+                                    <input class="<%=validationArray.find(f => f.path === 'myemail') ? 'invalid' :'' %>" type="email" name="myemail" id="email" pattern="[A-Za-z0-9@._\-!#$%^&*()+=]*"
+                                        placeholder="Email" value="<%=oldInput.email%>">
+
+                                    <i class="fa-solid fa-user"></i>
+                                </div>
+                                <div class="phone-input">
+                                    <input type="tel" name="myphone" id="phone" placeholder="Phone Number" value="<%=oldInput.phoneNumber%>" >
+
+                                    <i class="fa-solid fa-user"></i>
+                                </div>
+                                <div class="username-input">
+                                    <input type="text" name="myusername" id="username"
+                                        pattern="[A-Za-z0-9@._\-!#$%^&*()+=]*" placeholder="Username" value="<%=oldInput.name%>">
+
+                                    <i class="fa-solid fa-user"></i>
+                                </div>
+                                <div class="state-input">
+                                    <input type="text" name="mystate" id="state" placeholder="State" value="<%=oldInput.state%>">
+                                    <i class="fa-solid fa-lock"></i>
+                                </div>
+                                <div class="city-input">
+                                    <input type="text" name="mycity" id="city" placeholder="City" value="<%=oldInput.city%>">
+                                    <i class="fa-solid fa-lock"></i>
+                                </div>
+                                <div class="zipcode-input">
+                                    <input type="number" name="myzipcode" id="zipcode" min="110001" max="999999"
+                                        placeholder="Zip-Code" value="<%=oldInput.zipcode%>">
+                                    <i class="fa-solid fa-lock"></i>
+                                </div>
+                                <div class="area-input">
+                                    <input type="text" name="myarea" id="area" placeholder="Area" value="<%=oldInput.area%>">
+                                    <i class="fa-solid fa-lock"></i>
+                                </div>
+                                <div class="street-input">
+                                    <input type="text" name="mystreet" id="street" placeholder="Street" value="<%=oldInput.street%>">
+                                    <i class="fa-solid fa-lock"></i>
+                                </div>
+                                <div class="addtype-input">
+                                    <input type="text" name="myaddtype" id="addtype"
+                                        placeholder="Address Type(Ex : Home, Office, etc)" value="<%=oldInput.addType%>">
+                                    <i class="fa-solid fa-lock"></i>
+                                </div>
+                                <div class="flat-input">
+                                    <input type="text" name="myflat" id="flat"
+                                        placeholder="Flat/Apartment/Building Name" value="<%=oldInput.flat%>">
+                                    <i class="fa-solid fa-lock"></i>
+                                </div>
+                                <div class="inputpass">
+                                    <input class="<%=validationArray.find(f => f.path === 'mypassword') ? 'invalid' :'' %>" type="password" name="mypassword" id="pass" minlength="6"
+                                        placeholder="Password">
+                                    <i class="fa-solid fa-lock"></i>
+                                </div>
+                                <div class="inputpass">
+                                    <input class="<%=validationArray.find(f => f.path === 'myconfirmpassword') ? 'invalid' :'' %>" type="password" name="myconfirmpassword" id="pass" minlength="6"
+                                      placeholder="Confirm Password">
+                                    <i class="fa-solid fa-lock"></i>
+                                </div>
+
+                                <input type="hidden" name="_csrf" value="<%= csrfToken %>">
+                                <button type="submit" id="submit">Signup</button>
+
+
+
+                            </form>
+                        </div>
+
+            </main>
+
+    </body>
+
+    </html>

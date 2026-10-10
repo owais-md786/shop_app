@@ -1,0 +1,34 @@
+doctype html
+html(lang="en")
+    head
+        meta(charset="UTF-8")
+        meta(name="viewport", content="width=device-width, initial-scale=1.0")
+        title #{docTitle}
+        link(rel="stylesheet", href="/css/user-view.css")
+    body 
+        header.head
+            nav.nav 
+                li.home
+                    a(href="/",class=(path==='/'?'active':'')) Shop 
+                li.add 
+                    a(href="/admin/add-products") Add Product 
+        main.content 
+            if prodss.length>0  
+                h1 My Products
+                p List of all the products
+                .prods 
+                    each product in prodss
+                        .prod   
+                            .item 
+                                .img 
+                                    img.prod-img(src="../facebook-logo.png", alt="image")
+                                .title 
+                                    p#title-name #{product.title.charAt(0).toUpperCase()+product.title.substring(1)}
+                                .price 
+                                    .innerp 
+                                        span Price: 
+                                        p $#{product.price}.00
+                                .addtocart 
+                                    button.cart-btn Add To Cart
+            else 
+                h1 No Products
