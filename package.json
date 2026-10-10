@@ -32,7 +32,6 @@
     "mongodb": "^6.21.0",
     "mongoose": "^8.24.4",
     "morgan": "^1.12.1",
-    "msnodesqlv8": "^5.2.0",
     "mssql": "^12.5.2",
     "multer": "^2.4.0",
     "mysql2": "^3.22.3",

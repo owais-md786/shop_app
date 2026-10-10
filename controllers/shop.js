@@ -6,9 +6,9 @@ const Order = require('../models/order')
 const db = require('../util/databaseMYSQL');
 const User = require('../models/user');
 
-const mongodb = require('mongodb');
+//const mongodb = require('mongodb');
 const { default: mongoose } = require('mongoose');
-const getdb = require('../util/databaseMongoDB').getdb;
+//const getdb = require('../util/databaseMongoDB').getdb;
 
 const fs = require('fs')
 

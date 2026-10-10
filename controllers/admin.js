@@ -1,8 +1,8 @@
 const Product = require('../models/product');
 
-const mongodb = require('mongodb')
+//const mongodb = require('mongodb')
 
-const getdb = require('../util/databaseMongoDB').getdb;
+//const getdb = require('../util/databaseMongoDB').getdb;
 
 const io=require('../socketInitialize')
 const User = require('../models/user');
