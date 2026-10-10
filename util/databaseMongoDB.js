@@ -4,7 +4,7 @@ const MongoClient=mongodb.MongoClient;
 let _db;
 
 const mongoConnect =(callback) =>{
-    MongoClient.connect('mongodb+srv://mdowaise123456_db_user:owais__md@cluster0.apop02s.mongodb.net/node_shopapp_db?appName=Cluster0')
+    MongoClient.connect(process.env.MONGODB_URI)
     .then(client =>{
         console.log('Connected!');
         _db=client.db();   //storing access to database
