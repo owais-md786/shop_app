@@ -319,14 +319,14 @@ exports.postNewPass = (req, res, next) => {
                     return user.save()
                 })
                 .then(result => {
-                    res.redirect('/login');
                     transporter.sendMail({
                         to: user.email,
                         from: '"Node Shop App" <owaisind2005@gmail.com>',
                         subject: 'Password Reset Successful',
                         html: `
-                    <p>Password for account ${user.email} has been changed successfully</p>`
+                        <p>Password for account ${user.email} has been changed successfully</p>`
                     })
+                    res.redirect('/login');
                 })
         })
         .catch(err => {
