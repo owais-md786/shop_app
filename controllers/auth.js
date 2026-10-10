@@ -264,6 +264,12 @@ exports.postreset = (req, res, next) => {
                     `
                 })
             })
+            .catch(err=>{
+                console.log(err);
+                const err=new Error(err);
+                error.statusCode=403;
+                next(error)
+            })
     })
 }
 
