@@ -260,7 +260,7 @@ exports.postreset = (req, res, next) => {
                     subject: 'Password Reset Link',
                     html: `
                     <p>You requested a password reset for your account ${req.body.myemail}</p>
-                    <p> Click this <a href = "http://localhost:8080/reset-password/${token}">link</a> to set a new password</p>    
+                    <p> Click this <a href = "https://shop-app-jl6a.onrender.com/reset-password/${token}">link</a> to set a new password</p>    
                     `
                 })
             })
