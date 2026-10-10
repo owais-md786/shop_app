@@ -156,7 +156,7 @@ app.set('trust proxy', 1);
 app.use(session({
     secret: process.env.SESSION_SECRET, resave: false, saveUninitialized: false, store: store,
     cookie: {
-        secure: process.env.NODE_ENV === 'production',
+        secure: true,
         httpOnly: true,
         sameSite:'lax',
         maxAge: 3600000
