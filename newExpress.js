@@ -151,11 +151,14 @@ app.use(multer({ storage: fileStorage, fileFilter: fileFilter }).single('image')
 
 app.use(express.static(path.join(__dirname, 'public')));
 
+app.set('trust proxy', 1);
+
 app.use(session({
     secret: process.env.SESSION_SECRET, resave: false, saveUninitialized: false, store: store,
     cookie: {
         secure: process.env.NODE_ENV === 'production',
         httpOnly: true,
+        sameSite:'lax',
         maxAge: 3600000
     }
 }))
