@@ -135,7 +135,7 @@ For supported cart interactions, client-side JavaScript uses "fetch()" to commun
 
 ---
 
-📁 Project Structure
+```📁 Project Structure
 
 shop_app/
 |-- controllers/
@@ -150,6 +150,7 @@ shop_app/
 |-- package.json
 |-- .gitignore
 `-- README.md
+```
 
 Note: This is a simplified representation of the project structure. Individual folders contain additional files as required.
 
