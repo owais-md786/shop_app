@@ -40,7 +40,7 @@
                         <img src="/images/<%= prod._doc.product.imageURL %>" alt="fb">
                         <div class="prod">
                             <p id="title"><%= prod._doc.product.title.charAt(0).toUpperCase()+prod._doc.product.title.substring(1) %></p>
-                            <p id="info"><%= prod._doc.product.description %></p>
+                            <p id="info"><%= prod._doc.product.description.length>30?prod._doc.product.description.substring(0,26) + "..." : prod._doc.product.description%></p>
                             <p class="quant">Qty:<%= prod._doc.product.quantity %></p>
                         </div>
                         </div>
