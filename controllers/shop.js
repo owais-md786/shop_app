@@ -567,6 +567,7 @@ exports.orderSummary = (req, res, next) => {
 exports.postaddOrder = (req, res, next) => {
     const mydate = new Date();
     const date = mydate.toLocaleString('en-IN', {
+        timeZone: 'Asia/Kolkata',
         month: 'long',
         day: 'numeric',
         year: 'numeric',
