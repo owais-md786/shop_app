@@ -1,4 +1,4 @@
-Node Shop App
+Shop App
 
 A full-stack e-commerce web application built using Node.js, Express.js, MongoDB, and EJS, with session-based authentication, RESTful APIs, and real-time communication using WebSockets.
 
