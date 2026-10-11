@@ -138,38 +138,18 @@ For supported cart interactions, client-side JavaScript uses "fetch()" to commun
 📁 Project Structure
 
 shop_app/
-├── controllers/
-│   ├── auth.js
-│   ├── shop.js
-│   ├── admin.js
-│   └── error.js
-├── models/
-│   ├── user.js
-│   ├── product.js
-│   └── order.js
-├── routes/
-│   ├── auth.js
-│   ├── shop.js
-│   └── admin.js
-├── middleware/
-│   └── is-auth.js
-├── views/
-│   ├── shop/
-│   ├── auth/
-│   ├── admin/
-│   ├── includes/
-│   └── layouts/
-├── public/
-│   ├── css/
-│   ├── js/
-│   └── images/
-├── util/
-├── socketInitialize.js
-├── newExpress.js
-├── package.json
-├── package-lock.json
-├── .gitignore
-└── README.md
+|-- controllers/
+|-- models/
+|-- routes/
+|-- middleware/
+|-- views/
+|-- public/
+|-- util/
+|-- socketInitialize.js
+|-- newExpress.js
+|-- package.json
+|-- .gitignore
+`-- README.md
 
 Note: This is a simplified representation of the project structure. Individual folders contain additional files as required.
 
