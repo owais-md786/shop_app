@@ -135,6 +135,65 @@ For supported cart interactions, client-side JavaScript uses "fetch()" to commun
 
 ---
 
+📁 Project Structure
+
+shop_app/
+├── controllers/             # Application logic and request handlers
+│   ├── auth.js              # Authentication and password reset
+│   ├── shop.js              # Products, cart, and orders
+│   ├── admin.js             # Administrative operations
+│   └── error.js             # Error handling
+│
+├── models/                  # Mongoose database models
+│   ├── user.js              # User and cart data
+│   ├── product.js           # Product schema
+│   └── order.js             # Order schema
+│
+├── routes/                  # Application routes and endpoints
+│   ├── auth.js              # Login, signup, and authentication
+│   ├── shop.js              # Shopping and order routes
+│   └── admin.js             # Admin routes
+│
+├── middleware/              # Custom request middleware
+│   └── is-auth.js           # Authentication checks
+│
+├── views/                   # EJS templates
+│   ├── shop/                # Shop and product pages
+│   ├── auth/                # Login, signup, and reset pages
+│   ├── admin/               # Admin dashboard and product pages
+│   ├── includes/             # Reusable template partials
+│   └── layouts/              # Shared layouts, if used
+│
+├── public/                  # Static assets
+│   ├── css/                 # Stylesheets
+│   ├── js/                  # Client-side JavaScript
+│   └── images/              # Product and UI images
+│
+├── util/                    # Reusable helper utilities
+│
+├── socketInitialize.js      # Socket.IO initialization
+├── newExpress.js            # Main Express application entry point
+├── package.json             # Dependencies and npm scripts
+├── package-lock.json        # Locked dependency versions
+├── .gitignore               # Excluded files and directories
+├── .env                     # Environment variables (not committed)
+└── README.md                # Project documentation
+
+Architecture Overview
+
+- Controllers: Implement application logic for authentication, product management, cart operations, and orders.
+- Models: Define MongoDB schemas and database interactions using Mongoose.
+- Routes: Organize application endpoints and connect requests to controllers.
+- Middleware: Handle authentication and request-level checks.
+- Views: Render dynamic web pages using EJS.
+- Public: Store CSS, browser-side JavaScript, and image assets.
+- Socket.IO: Enable real-time, event-based communication.
+- Main server: Configure Express, middleware, routes, sessions, and the HTTP server.
+
+«Note: This folder structure is illustrative. Update the filenames and folders to match your actual repository before publishing.
+
+-----
+
 🔒 Security Considerations
 
 Security is an important part of the application's implementation.
