@@ -8,7 +8,8 @@
 
 #detail{
    /*  border:2px solid red; */
-    height: auto;
+   height: auto;
+   box-sizing: border-box;
     /* display:flex;
     justify-content:center;
     align-items: center; */
@@ -121,4 +122,9 @@
 .img img{
     height:210px;
 }
+
+#detail{
+    padding-bottom:70px;
+}
+
 }
