@@ -137,7 +137,7 @@ For supported cart interactions, client-side JavaScript uses "fetch()" to commun
 
 📁 Project Structure
 
-shop_app/
+`shop_app/
 ├── controllers/
 │   ├── auth.js
 │   ├── shop.js
@@ -169,7 +169,7 @@ shop_app/
 ├── package.json
 ├── package-lock.json
 ├── .gitignore
-└── README.md
+└── README.md`
 
 ---
 
