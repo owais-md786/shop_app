@@ -38,7 +38,7 @@
     margin-bottom:30px;
 }
 .img img{
-    height:150px;
+    height:210px;
 }
 
 .rate{
@@ -52,15 +52,28 @@
     font-size:30px;
 }
 
-.desc{
+.desc,.spec{
    /*  border:2px solid purple; */
    margin:20px;
    margin-top:10px;
-   margin-bottom:5px;
+   margin-bottom:0px;
     padding:20px 90px;
 }
-.description{
+
+.desc .title,.spec .title{
+    text-align:left;
+   font-size:25px;
+  
+}
+.description,.specification{
+    line-height: 1.6;
+    margin-top:10px;
     font-size:17px;
+    text-align: start;
+}
+.specification{
+    margin-top:0px;
+    white-space:pre-line;
 }
 .btn{
     margin:5px;
@@ -94,3 +107,18 @@
     -webkit-touch-callout: none;
     outline: none;
         }
+
+
+@media (max-width:883px) {
+        .desc,.spec{
+   /*  border:2px solid purple; */
+   margin:20px;
+   margin-top:10px;
+   margin-bottom:0px;
+    padding:20px 20px;
+}
+
+.img img{
+    height:210px;
+}
+}

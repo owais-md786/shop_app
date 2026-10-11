@@ -143,6 +143,10 @@ const productSchema = new Schema({
         type:String,
         required:true
     },
+    specification:{
+        type:String,
+        required:true
+    },
     imageURL:{
         type:String,
         required:true

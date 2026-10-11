@@ -21,6 +21,7 @@ exports.postAddProduct = (req, res, next) => {
     const price = req.body.price
     const image = req.file
     const description = req.body.description.trim()
+    const specification=req.body.specification.trim()
     console.log('image', image)
 
     if (!image) {
@@ -39,6 +40,7 @@ exports.postAddProduct = (req, res, next) => {
         title: title,
         price: price,
         description: description,
+        specification:specification,
         imageURL: imageURL,
         adminId: req.admin._id
     });
@@ -61,7 +63,7 @@ exports.postAddProduct = (req, res, next) => {
     }).catch((err) => {
         console.log(err);
         const error = new Error(err);
-        error.httpStatusCode = 500;
+        error.statusCode = 500;
         return next(error);
     })
 
@@ -97,7 +99,7 @@ exports.getAddProduct = (req, res, next) => {
     res.render('admin/add-products', {
         pageTitle: 'Add Product', path: '/admin/add-products',
         oldInput:{
-                title:'',price:'',description:''
+                title:'',price:'',description:'',specification:''
             },
             errorMessage:''
     });
@@ -193,6 +195,7 @@ exports.postEditProduct = (req, res, next) => {
     const price = req.body.price
     const image = req.file
     const description = req.body.description.trim();
+    const specification=req.body.specification.trim();
     const prodId = req.body.productId;
 
     console.log('this is from edit product',image)
@@ -241,6 +244,7 @@ exports.postEditProduct = (req, res, next) => {
             product.title = title;
             product.price = price;
             product.description = description;
+            product.specification=specification;
             if(image){
                 deleteFile(path.join(__dirname,'../','public','images',product.imageURL))
                 product.imageURL = image.filename;

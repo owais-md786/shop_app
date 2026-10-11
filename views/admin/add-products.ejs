@@ -25,7 +25,11 @@
             </div>
             <div class="input">
                 <label for="description">Enter Description</label>
-                <textarea name="description" id="description" rows="5" placeholder="Enter Description" ><%=oldInput.description%></textarea>
+                <textarea name="description" id="description" rows="3" placeholder="Enter Description" ><%=oldInput.description%></textarea>
+            </div>
+            <div class="input">
+                <label for="specification">Enter Product Specification</label>
+                <textarea name="specification" id="specification" rows="10" placeholder="Enter product specification" ><%=oldInput.specification%></textarea>
             </div>
             <div class="btn">
                 <input type="hidden" name="_csrf" value="<%= csrfToken %>">
