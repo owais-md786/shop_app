@@ -162,7 +162,6 @@ For supported cart interactions, client-side JavaScript uses "fetch()" to commun
 │   ├── auth/                # Login, signup, and reset pages
 │   ├── admin/               # Admin dashboard and product pages
 │   ├── includes/             # Reusable template partials
-│   └── layouts/              # Shared layouts, if used
 │
 ├── public/                  # Static assets
 │   ├── css/                 # Stylesheets
